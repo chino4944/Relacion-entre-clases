@@ -21,6 +21,17 @@ public class Jugador {
         } else {
             revolver.siguienteChorro();
         }
+        
+        System.out.println(revolver.toString());
+        
         return mojado;
     }
+
+    @Override
+    public String toString() {
+        return "Jugador{" + "id=" + id + ", nombre=" + nombre + ", mojado=" + mojado + '}';
+    }
+    
+    
+    
 }
