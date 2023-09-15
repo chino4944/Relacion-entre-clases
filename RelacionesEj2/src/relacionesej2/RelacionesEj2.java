@@ -13,7 +13,11 @@ public class RelacionesEj2 {
             jugadores.add(new Jugador(i, "jugador", false));
         }
         Juego game = new Juego();
+        System.out.println("se cargara el revolver de agua");
         RevolverDeAgua revolver = new RevolverDeAgua();
+        System.out.println("se cargo el revolver de agua");
+        System.out.println("----------");
+        System.out.println(" se inicia el juego");
         game.llenarJuego(jugadores, revolver);
         game.ronda();
     }

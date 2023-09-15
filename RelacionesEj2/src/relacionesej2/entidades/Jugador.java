@@ -16,14 +16,14 @@ public class Jugador {
     }
     
     public Boolean disparo(RevolverDeAgua revolver){
+        System.out.println("turno del "+nombre+" "+id);
         if (revolver.mojar()){
             mojado = true;
+            System.out.println("el "+nombre+" "+id+" fue mojado");
         } else {
+            System.out.println("el "+nombre+" "+ id +" no fue mojado, turno del siguiente");
             revolver.siguienteChorro();
-        }
-        
-        System.out.println(revolver.toString());
-        
+        }       
         return mojado;
     }
 

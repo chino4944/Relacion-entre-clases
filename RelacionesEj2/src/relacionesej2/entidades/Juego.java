@@ -3,25 +3,29 @@ package relacionesej2.entidades;
 import java.util.ArrayList;
 
 public class Juego {
-    ArrayList <Jugador> jugadores;
+
+    ArrayList<Jugador> jugadores;
     RevolverDeAgua revolver;
-    
-    public Juego(){
+
+    public Juego() {
         jugadores = new ArrayList<>();
     }
-    
-    public void llenarJuego(ArrayList<Jugador> jugadores,RevolverDeAgua revolver){
+
+    public void llenarJuego(ArrayList<Jugador> jugadores, RevolverDeAgua revolver) {
         this.jugadores = jugadores;
         this.revolver = revolver;
     }
-    
-    public void ronda(){
+
+    public void ronda() {
         revolver.llenarRevolver();
         for (Jugador jugador : jugadores) {
-            jugador.disparo(revolver);
-            revolver.siguienteChorro();
+            if ((jugador.disparo(revolver))) {
+                System.out.println("el juego se termino");
+                break;
+            } else {
+                revolver.siguienteChorro();
+            }
         }
-        System.out.println(jugadores.toString());
     }
 }
 /*
