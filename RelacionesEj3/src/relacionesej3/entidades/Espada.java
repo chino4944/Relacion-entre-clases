@@ -1,18 +1,29 @@
 package relacionesej3.entidades;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 
 public class Espada {
     
-    private HashSet<Integer> espadas;
+    private ArrayList<String> espadas = new ArrayList<>();
 
     public Espada(){
-        espadas = new HashSet<>();
-        for (int i = 1; i<11;i++){
+        for (int i = 1; i<13;i++){
             if (i!=8&&i!=9){
-                espadas.add(i); 
+                espadas.add("e"+i); 
             }
         }
+    }
+
+    public ArrayList<String> getEspadas() {
+        return espadas;
+    }
+    
+    public String devolverValor(int posicion){
+        return espadas.get(posicion);
+    }
+    
+        public Integer Longitud(){
+        return espadas.size();
     }
     
     public void mostrarEspada(){

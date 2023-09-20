@@ -1,19 +1,32 @@
 package relacionesej3.entidades;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 
 public class Basto {
     
-    private HashSet<Integer> bastos;
+    private ArrayList<String> bastos = new ArrayList<>();
     
     public Basto(){
-        bastos = new HashSet<>();
-        for (int i = 1; i<11;i++){
+        for (int i = 1; i<13;i++){
             if (i!=8&&i!=9){
-                bastos.add(i); 
+                bastos.add("b"+i); 
             }
         }
     }
+
+    public ArrayList<String> getBastos() {
+        return bastos;
+    }
+    
+    
+
+    public Integer Longitud(){
+        return bastos.size();
+    }
+    
+    /*public String devolverValor(){
+        
+    }*/
     
     public void mostrarBastos(){
         System.out.println(bastos);

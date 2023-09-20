@@ -1,19 +1,28 @@
 package relacionesej3.entidades;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 
 public class Copa {
 
-    private HashSet <Integer> copas;
+    private ArrayList <String> copas = new ArrayList<>();
     
     public Copa(){
-        copas = new HashSet<>();
-        for (int i = 1; i<11;i++){
+        for (int i = 1; i<13;i++){
             if (i!=8&&i!=9){
-                copas.add(i); 
+                copas.add("c"+i); 
             }
         }
     }
+
+    public ArrayList<String> getCopas() {
+        return copas;
+    }
+    
+        public Integer Longitud(){
+        return copas.size();
+    }
+        
+        
     
     public void mostrarCopas(){
         System.out.println(copas);

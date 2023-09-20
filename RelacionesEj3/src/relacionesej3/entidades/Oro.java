@@ -1,20 +1,26 @@
 package relacionesej3.entidades;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 
 public class Oro {
     
-    private HashSet<Integer> monedas;
+    private ArrayList<String> monedas = new ArrayList<>();
     
     public Oro(){
-        monedas = new HashSet<>();
-        for (int i = 1; i<11;i++){
+        for (int i = 1; i<13;i++){
             if (i!=8&&i!=9){
-                monedas.add(i); 
+                monedas.add("o"+i); 
             }
         }
     }
+
+    public ArrayList<String> getMonedas() {
+        return monedas;
+    }
     
+        public Integer Longitud(){
+        return monedas.size();
+    }
     
     public void mostrarMonedas(){
         System.out.println(monedas);

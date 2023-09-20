@@ -1,14 +1,19 @@
 package relacionesej3;
 
-import relacionesej3.entidades.Espada;
+import relacionesej3.entidades.BarajaEspanola;
 
 public class RelacionesEj3 {
 
     public static void main(String[] args) {
         
-        Espada e1 = new Espada();
-        e1.mostrarEspada();
-        
+        BarajaEspanola baraja = new BarajaEspanola();
+        baraja.mostrarBaraja();
+        System.out.println("--------");
+        baraja.barajar();
+        baraja.mostrarBaraja();
+        System.out.println("********");
+        baraja.barajar();
+        baraja.mostrarBaraja();
     }
     
 }
