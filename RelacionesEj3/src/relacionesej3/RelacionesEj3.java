@@ -7,16 +7,19 @@ public class RelacionesEj3 {
     public static void main(String[] args) {
         
         BarajaEspanola baraja = new BarajaEspanola();
-        baraja.mostrarBaraja();
-        System.out.println("--------");
         baraja.barajar();
+        System.out.println(baraja.toString());
+        baraja.siguienteCarta();
+        System.out.println(baraja.toString());
+        baraja.darCartas();
+        System.out.println(baraja.toString());
+        baraja.cartasMonton();
+        System.out.println("+++++++++++");
         baraja.mostrarBaraja();
-        System.out.println("********");
-        baraja.barajar();
-        baraja.mostrarBaraja();
+        }
     }
     
-}
+
 /*
 Realizar una baraja de cartas españolas orientada a objetos. Una carta tiene un número entre 1
 y 12 (el 8 y el 9 no los incluimos) y un palo (espadas, bastos, oros y copas). Esta clase debe

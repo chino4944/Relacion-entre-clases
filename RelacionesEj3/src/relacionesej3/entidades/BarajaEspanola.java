@@ -1,62 +1,97 @@
 package relacionesej3.entidades;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Scanner;
 
 public class BarajaEspanola {
-    
+
     private ArrayList<String> baraja;
+    private HashSet<String> fueraBaraja;
     private Espada e = new Espada();
     private Basto b = new Basto();
     private Copa c = new Copa();
     private Oro o = new Oro();
-    
-    public BarajaEspanola(){
+    Scanner leer;
+
+    public BarajaEspanola() {
         baraja = new ArrayList<>();
-            baraja.addAll(e.getEspadas());
-            baraja.addAll(b.getBastos());
-            baraja.addAll(c.getCopas());
-            baraja.addAll(o.getMonedas());
-        }
-    
-    public void barajar(){
+        fueraBaraja = new HashSet<>();
+        baraja.addAll(e.getEspadas());
+        baraja.addAll(b.getBastos());
+        baraja.addAll(c.getCopas());
+        baraja.addAll(o.getMonedas());
+        leer = new Scanner(System.in);
+    }
+
+    public void barajar() {
         ArrayList<String> aux = new ArrayList<>();
         int random;
-        while (!baraja.isEmpty()){
-            random = (int) (Math.random()*baraja.size());
+        while (!baraja.isEmpty()) {
+            random = (int) (Math.random() * baraja.size());
             aux.add(baraja.get(random));
             baraja.remove(random);
         }
         baraja = aux;
     }
-    
-    public void mostrarBaraja(){
+
+    public void mostrarBaraja() {
         for (String string : baraja) {
             System.out.println(string);
         }
+    }
+
+    public void siguienteCarta() {
+        if (!baraja.isEmpty()) {
+            System.out.println(baraja.get(0));
+            fueraBaraja.add(baraja.get(0));
+            baraja.remove(0);
+            cartasDisponibles();
+        } else {
+            cartasDisponibles();
         }
+    }
+
+    public void darCartas() {
+        System.out.println("cuantas cartas desea!?");
+        int aux = leer.nextInt();
+        if (aux < baraja.size()) {
+            for (int i = 0; i < aux; i++) {
+                siguienteCarta();
+            }
+        } else {
+            System.out.println("la cantidad de cartas que pide no estan disponibles en la baraja");
+        }
+    }
+    
+    public void cartasMonton(){
+        if (fueraBaraja.isEmpty()){
+            System.out.println("No hay cartas en el monton aún");
+        } else {
+            for (String carta : fueraBaraja) {
+                System.out.println(carta);
+            }
+        }
+    }
+
+    public void cartasDisponibles() {
+        if (baraja.isEmpty()) {
+            System.out.println("ya no quedan cartas en la baraja");
+        } else {
+            System.out.println("quedan " + baraja.size() + " cartas en la baraja");
+        }
+    }
 
     @Override
     public String toString() {
         return "BarajaEspanola{" + "baraja=" + baraja + '}';
     }
-    
-    
-    }
+
+}
 
 /*
-•barajar(): cambia de posición todas las cartas aleatoriamente.
-
-•siguienteCarta(): devuelve la siguiente carta que está en la baraja, cuando no haya más o
-se haya llegado al final, se indica al usuario que no hay más cartas.
-
-•cartasDisponibles(): indica el número de cartas que aún se puede repartir.
-
-•darCartas(): dado un número de cartas que nos pidan, le devolveremos ese número de
-cartas. En caso de que haya menos cartas que las pedidas, no devolveremos nada, pero
-debemos indicárselo al usuario.
-
 •cartasMonton(): mostramos aquellas cartas que ya han salido, si no ha salido ninguna
-indicárselo al usuario
+indicárselo al usuariousuario
 
 •mostrarBaraja(): muestra todas las cartas hasta el final. Es decir, si se saca una carta y
 luego se llama al método, este no mostrara esa primera carta.

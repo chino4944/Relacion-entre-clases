@@ -17,16 +17,4 @@ public class Espada {
     public ArrayList<String> getEspadas() {
         return espadas;
     }
-    
-    public String devolverValor(int posicion){
-        return espadas.get(posicion);
-    }
-    
-        public Integer Longitud(){
-        return espadas.size();
-    }
-    
-    public void mostrarEspada(){
-        System.out.println(espadas);
-    }
 }

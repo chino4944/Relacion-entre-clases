@@ -17,15 +17,4 @@ public class Copa {
     public ArrayList<String> getCopas() {
         return copas;
     }
-    
-        public Integer Longitud(){
-        return copas.size();
-    }
-        
-        
-    
-    public void mostrarCopas(){
-        System.out.println(copas);
-    }
-    
 }

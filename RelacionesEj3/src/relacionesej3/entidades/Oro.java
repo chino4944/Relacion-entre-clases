@@ -17,13 +17,5 @@ public class Oro {
     public ArrayList<String> getMonedas() {
         return monedas;
     }
-    
-        public Integer Longitud(){
-        return monedas.size();
-    }
-    
-    public void mostrarMonedas(){
-        System.out.println(monedas);
-    }
 
 }
