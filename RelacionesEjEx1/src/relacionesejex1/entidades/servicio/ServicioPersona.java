@@ -41,6 +41,10 @@ public class ServicioPersona {
         return personas.get(posicion);
     }
     
+    public String nombreMascota(Integer posicion){
+        return personas.get(posicion).getMascota().getNombre();
+    }
+    
     @Override
     public String toString() {
         return "ServicioPersona{" + "personas=" + personas + ", leer=" + leer + '}';

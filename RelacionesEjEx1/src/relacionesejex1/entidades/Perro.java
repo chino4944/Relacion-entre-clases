@@ -7,6 +7,7 @@ public class Perro {
     private Float tamaño;
 
     public Perro() {
+        nombre = "";
     }
 
     

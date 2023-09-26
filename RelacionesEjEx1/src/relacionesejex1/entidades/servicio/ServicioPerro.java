@@ -29,8 +29,8 @@ public class ServicioPerro {
 
     public boolean buscarPerro(String nombre) {
         boolean aux = false;
-        while (perros.iterator().hasNext()) {
-            if (nombre.equalsIgnoreCase(perros.iterator().next().getNombre())){
+        for (int i = 0; i<perros.size();i++){
+            if (nombre.equalsIgnoreCase(perros.get(i).getNombre())){
                 System.out.println("el perro "+nombre+" esta disponible para adopcion");
                 aux = true;
                 break;
@@ -41,19 +41,20 @@ public class ServicioPerro {
     
     public Integer buscarPerroAAdoptar(String nombre) {
         Integer aux = 0;
-        for (int i = 0; i< perros.size();i++){
-            if (nombre.equalsIgnoreCase(perros.get(i).getNombre()))
+        for (int i = 0; i < perros.size(); i++) {
+            if (nombre.equalsIgnoreCase(perros.get(i).getNombre())) {
                 aux = i;
-            break;
-        } 
+                break;
+            }
+        }
         return aux;
     }
     
     public boolean buscarPerroAdoptado(String nombre){
         
         boolean aux = false;
-        while (perrosAdoptados.iterator().hasNext()) {
-            if (nombre.equalsIgnoreCase(perrosAdoptados.iterator().next().getNombre())){
+        for (int i = 0;i<perrosAdoptados.size();i++) {
+            if (nombre.equalsIgnoreCase(perrosAdoptados.get(i).getNombre())){
                 System.out.println("el perro "+nombre+" ya fue adoptado");
                 aux = true;
                 break;
@@ -64,13 +65,15 @@ public class ServicioPerro {
     
     public Perro adoptarPerro(String nombre){
         int i = buscarPerroAAdoptar(nombre);
+        System.out.println(i);
         return perros.get(i);
     }
 
     public void perroAdoptado(String nombre){
-        while (perros.iterator().hasNext()){
-            if (perros.iterator().next().getNombre().equalsIgnoreCase(nombre)){
-                perrosAdoptados.add(perros.iterator().next());
+        for (int i = 0;i<perros.size();i++){
+            if (perros.get(i).getNombre().equalsIgnoreCase(nombre)){
+                perrosAdoptados.add(perros.get(i));
+                break;
             }
         }
     }
