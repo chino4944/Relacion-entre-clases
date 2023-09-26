@@ -39,6 +39,16 @@ public class ServicioPerro {
         return aux;
     }
     
+    public Integer buscarPerroAAdoptar(String nombre) {
+        Integer aux = 0;
+        for (int i = 0; i< perros.size();i++){
+            if (nombre.equalsIgnoreCase(perros.get(i).getNombre()))
+                aux = i;
+            break;
+        } 
+        return aux;
+    }
+    
     public boolean buscarPerroAdoptado(String nombre){
         
         boolean aux = false;
@@ -51,13 +61,23 @@ public class ServicioPerro {
         }
         return aux;        
     }
+    
+    public Perro adoptarPerro(String nombre){
+        int i = buscarPerroAAdoptar(nombre);
+        return perros.get(i);
+    }
 
     public void perroAdoptado(String nombre){
         while (perros.iterator().hasNext()){
             if (perros.iterator().next().getNombre().equalsIgnoreCase(nombre)){
                 perrosAdoptados.add(perros.iterator().next());
-                perros.iterator().remove();
             }
+        }
+    }
+    
+    public void mostrarPerros(){
+        for (Perro perro : perros) {
+            System.out.println(perro.getNombre());
         }
     }
     

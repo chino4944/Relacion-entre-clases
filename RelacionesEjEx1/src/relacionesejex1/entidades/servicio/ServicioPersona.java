@@ -27,5 +27,24 @@ public class ServicioPersona {
     
     public void adoptarPerro(Persona adoptante, Perro perro){
         adoptante.setMascota(perro);
-    }    
+    }
+
+    public Integer longitud(){
+        return personas.size();
+    }
+
+    public String nombre(Integer posicion){
+        return personas.get(posicion).getNombre();
+    }
+    
+    public Persona personaQueAdopta(int posicion){
+        return personas.get(posicion);
+    }
+    
+    @Override
+    public String toString() {
+        return "ServicioPersona{" + "personas=" + personas + ", leer=" + leer + '}';
+    }
+    
+    
 }

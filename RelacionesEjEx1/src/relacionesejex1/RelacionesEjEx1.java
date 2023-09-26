@@ -1,9 +1,33 @@
 package relacionesejex1;
 
+import java.util.Scanner;
+import relacionesejex1.entidades.servicio.ServicioPerro;
+import relacionesejex1.entidades.servicio.ServicioPersona;
+
 public class RelacionesEjEx1 {
 
     public static void main(String[] args) {
     
+        ServicioPersona personas  = new ServicioPersona();
+        ServicioPerro perros = new ServicioPerro();
+        Scanner leer = new Scanner(System.in);
+        personas.anadirPersonasAutomatico();
+        perros.agregarPerros();
+        
+        for (int i = 0;i<personas.longitud();i++ ){
+            System.out.println("hola " + personas.nombre(i) +" elige uno de los perros de la siguiente lista para adoptar");
+            perros.mostrarPerros();            
+            String aux = leer.nextLine();
+            if(perros.buscarPerroAdoptado(aux)){
+                System.out.println("el perro ya fue adoptado");
+            } else if (perros.buscarPerro(aux)){
+                personas.adoptarPerro(personas.personaQueAdopta(i), perros.adoptarPerro(aux));
+                perros.perroAdoptado(aux);
+                System.out.println("felicitaciones "+ personas.nombre(i)+" adoptaste a "+aux);
+            } else {
+                System.out.println("el nombre del perro introducido no esta en nuestra lista de perros por adoptar");
+            }
+        }
         
         
     }
