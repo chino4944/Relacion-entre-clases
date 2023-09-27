@@ -3,6 +3,7 @@ package relacionesejex2.entidades;
 public class Cine {
     private Sala sala;
     private Pelicula peli;
+    private Float entrada;
     
     public Cine(){
         
@@ -23,7 +24,15 @@ public class Cine {
     public void setPeli(Pelicula peli) {
         this.peli = peli;
     }
-    2s   
+    
+    public Float getEntrada(){
+        return entrada;
+    }
+    
+    public void setEntrada(Float entrada){
+        this.entrada = entrada;
+    }
+       
 }
 /*
 Nos piden hacer un programa sobre un Cine, que tiene una sala con un conjunto de asientos

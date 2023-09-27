@@ -1,9 +1,13 @@
 package relacionesejex2;
 
+import relacionesejex2.servicio.ServicioCine;
+
 public class RelacionesEjEx2 {
 
     public static void main(String[] args) {
-        
+        ServicioCine funcion = new ServicioCine();
+        funcion.llenarEspectadores();
+        funcion.imprimirPosiblesEspectadores();
     }
     
 }

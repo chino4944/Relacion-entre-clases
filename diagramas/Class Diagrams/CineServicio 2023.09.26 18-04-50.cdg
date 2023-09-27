@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="CineServicio">
+  <ClassDiagramComponents>
+    <Class name="CineServicio" package="ejC02.servicios" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="leer" type="Scanner" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="abrirCine" returnType="Cine" visibility="public"/>
+        <Method name="modificarCine" returnType="Cine" visibility="public">
+          <Argument type="Cine" name="c"/>
+        </Method>
+        <Method name="crearPosiblesEspectadores" returnType="ArrayList&lt;Espectador&gt;" visibility="public"/>
+        <Method name="recibirPosiblesEspectadores" returnType="Cine" visibility="public">
+          <Argument type="Cine" name="c"/>
+          <Argument type="ArrayList&lt;Espectador&gt;" name="interesados"/>
+        </Method>
+        <Method name="verSala" returnType="void" visibility="public">
+          <Argument type="Cine" name="c"/>
+        </Method>
+        <Method name="revisarEspectadores" returnType="void" visibility="public">
+          <Argument type="Cine" name="c"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
