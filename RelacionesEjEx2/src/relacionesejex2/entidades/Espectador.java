@@ -2,7 +2,7 @@ package relacionesejex2.entidades;
 
 public class Espectador {
     private String nombre;
-    private Interger edad;
+    private Integer edad;
     private Float dinero;
     
     public Espectador(){
@@ -23,11 +23,11 @@ public class Espectador {
         this.nombre = nombre;
     }
 
-    public Interger getEdad() {
+    public Integer getEdad() {
         return edad;
     }
 
-    public void setEdad(Interger edad) {
+    public void setEdad(Integer edad) {
         this.edad = edad;
     }
 
@@ -43,7 +43,4 @@ public class Espectador {
     public String toString() {
         return "Espectador{" + "nombre=" + nombre + ", edad=" + edad + ", dinero=" + dinero + '}';
     }
-    
-    
-    
-}s
+}

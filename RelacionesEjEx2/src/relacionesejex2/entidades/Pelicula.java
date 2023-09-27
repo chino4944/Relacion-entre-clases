@@ -53,7 +53,4 @@ public class Pelicula {
     public String toString() {
         return "Pelicula{" + "titulo=" + titulo + ", duracion=" + duracion + ", edadMinima=" + edadMinima + ", director=" + director + '}';
     }
-    
-    
-    
-}s
+}
