@@ -6,8 +6,7 @@ public class RelacionesEjEx2 {
 
     public static void main(String[] args) {
         ServicioCine funcion = new ServicioCine();
-        funcion.llenarEspectadores();
-        funcion.imprimirPosiblesEspectadores();
+        
     }
     
 }

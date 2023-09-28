@@ -19,7 +19,7 @@ public class ServicioCine {
         pelicula = new Pelicula();        
     }
     
-    public void llenarEspectadores(){
+    public void llenarPosiblesEspectadores(){
         int aux;
         aux = 20 + (int) (Math.random()*80+1);
         while (posiblesEspectadores.size()<aux){
@@ -27,14 +27,20 @@ public class ServicioCine {
         }
     }
     
-    public void llenarSala(){
-        for (int i = 0; i<posiblesEspectadores.size();i++){
-            if (posiblesEspectadores.get(i).getDinero()> cine.getEntrada() && posiblesEspectadores.get(i).getEdad()>cine.getPeli().getEdadMinima()){
-                
-                posiblesEspectadores.get(i).setDinero(posiblesEspectadores.get(i).getDinero()-cine.getEntrada());
-                
-                
+    public void llenarSala() {
+        for (int i = 0; i < posiblesEspectadores.size(); i++) {
+            if (posiblesEspectadores.get(i).getDinero() > cine.getEntrada() && posiblesEspectadores.get(i).getEdad() > cine.getPeli().getEdadMinima()) {
+                posiblesEspectadores.get(i).setDinero(posiblesEspectadores.get(i).getDinero() - cine.getEntrada());
+                int fila = (int) (Math.random() * 8);
+                int columna = (int) (Math.random() * 6);
+                    if (cine.getSala().noEstaOcupado(fila, columna)) {
+                        cine.getSala().anadirEspectador(fila, columna, posiblesEspectadores.get(i));
+                        espectadores.add(posiblesEspectadores.get(i));
+                    } else {
+                        System.out.println("no hay puesto");
+                    }
+
             }
         }
-    }
+    }    
 }

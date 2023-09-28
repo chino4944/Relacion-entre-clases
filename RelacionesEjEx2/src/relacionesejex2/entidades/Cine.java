@@ -6,7 +6,9 @@ public class Cine {
     private Float entrada;
     
     public Cine(){
-        
+       sala = new Sala();
+       peli =new Pelicula("Star Wars",206,15,"George Lucas");
+       entrada = 3.5f;
     }
 
     public Sala getSala() {
