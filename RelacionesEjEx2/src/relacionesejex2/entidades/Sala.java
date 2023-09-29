@@ -27,6 +27,10 @@ public class Sala {
         return espec[fila][columna]==null;
     }
     
+    public Espectador verEspectador(int fila, int columna){
+        return espec[fila][columna];
+    }    
+    
     public int fila(){
         return fila;
     }
