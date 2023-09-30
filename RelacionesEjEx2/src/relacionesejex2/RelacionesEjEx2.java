@@ -1,17 +1,30 @@
 package relacionesejex2;
 
+import java.util.Scanner;
 import relacionesejex2.servicio.ServicioCine;
 
 public class RelacionesEjEx2 {
 
     public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
         ServicioCine funcion = new ServicioCine();
         funcion.llenarPosiblesEspectadores();
-        funcion.mostrarPosibleEspectadores();
         funcion.llenarSala();
-        System.out.println("*************");
-        funcion.mostrarEspectares();
+        System.out.println("El nombre de la pelicula es: ");
+        funcion.nombrePelicula();
+        System.out.println("El director de la pelicula es: ");
+        funcion.nombreDirector();
+        System.out.println("la duracion de la pelicula es ");
+        funcion.nombreDuracion();
+        System.out.println("la entrada tiene un costo de $");
+        funcion.precioDeEntrada();
         funcion.mostrarSala();
+        do{
+            System.out.println("introduzaca los datos de la persona a consultar");
+            funcion.consultarDatos(leer.nextLine());
+            System.out.println("desea consutar los datos de otro asiento");
+        } while("Si".equalsIgnoreCase(leer.nextLine()));
+        System.out.println("gracias por utilizar nuestros cines");
     }
     
 }
